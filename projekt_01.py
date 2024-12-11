@@ -89,3 +89,18 @@ def analyze_text(text):
     for length in word_lengths:
         length_freq[length] = length_freq.get(length, 0) + 1
 
+    print("LEN| OCCURENCES       |NR.")
+    print("----------------------------------------")
+    for length, freq in sorted(length_freq.items()):
+        print({length:>3}| {'*' * freq:<15} |{freq})
+
+def main():
+    print("----------------------------------------")
+    if authenticate_user():
+        print("----------------------------------------")
+        selected_text = select_text()
+        analyze_text(selected_text)
+
+if __name__ == "__main__":
+    main()
+
