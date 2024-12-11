@@ -53,4 +53,15 @@ def user_authentification():
         print("Unregistered user, terminating the program...")
         return False
     
-
+def text_selection():
+    print("We have 3 texts to be analyzed.")
+    try:
+        selection = int(input("Enter a number btw. 1 and 3 to select: "))
+        if 1 <= selection <= 3:
+            return texts[selection - 1]
+        else:
+            print("Wrong selection, close the program...")
+            exit()
+    except ValueError:
+        print("Input must be a number! Close the program...")
+        exit()
