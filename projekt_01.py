@@ -65,3 +65,22 @@ def text_selection():
     except ValueError:
         print("Input must be a number! Close the program...")
         exit()
+
+def analyze_text(text):
+    words = text.split()
+    word_count = len(words)
+    titlecase_count = sum(1 for word in words if word.istitle())
+    uppercase_count = sum(1 for word in words if word.isupper())
+    lowercase_count = sum(1 for word in words if word.islower())
+    numeric_count = sum(1 for word in words if word.isdigit())
+    numeric_sum = sum(int(word) for word in words if word.isdigit())
+
+    print("\n----------------------------------------")
+    print("There are", {word_count}, "words in the selected text.")
+    print("There are", {titlecase_count}, "titlecase words.")
+    print("There are", {uppercase_count}, "uppercase words.")
+    print("There are", {lowercase_count}, "lowercase words.")
+    print("There are", {numeric_count}, "numeric strings.")
+    print("The sum of all the numbers", {numeric_sum})
+    print("----------------------------------------")
+
