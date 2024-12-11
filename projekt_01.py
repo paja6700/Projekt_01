@@ -43,4 +43,14 @@ users = {
     "liz": "pass123"
 }
 
+def user_authentification():
+    name = input("username: ").strip()
+    password = input("password: ").strip()
+    if users.get(username) == password:
+        print("Welcome to the app, {username}")
+        return True
+    else:
+        print("Unregistered user, terminating the program...")
+        return False
+    
 
