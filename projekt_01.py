@@ -84,3 +84,8 @@ def analyze_text(text):
     print("The sum of all the numbers", {numeric_sum})
     print("----------------------------------------")
 
+    word_lengths = [len(word.strip('.,!?')) for word in words]
+    length_freq = {}
+    for length in word_lengths:
+        length_freq[length] = length_freq.get(length, 0) + 1
+
