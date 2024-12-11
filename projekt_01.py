@@ -46,8 +46,8 @@ users = {
 def user_authentification():
     name = input("username: ").strip()
     password = input("password: ").strip()
-    if users.get(username) == password:
-        print("Welcome to the app, {username}")
+    if users.get(name) == password:
+        print("Welcome to the app, {name}")
         return True
     else:
         print("Unregistered user, terminating the program...")
@@ -92,15 +92,14 @@ def analyze_text(text):
     print("LEN| OCCURENCES       |NR.")
     print("----------------------------------------")
     for length, freq in sorted(length_freq.items()):
-        print({length:>3}| {'*' * freq:<15} |{freq})
+        print("{:>3}| {:<15} |{}".format(length, '*' * freq, freq))
 
 def main():
     print("----------------------------------------")
-    if authenticate_user():
+    if user_authentification():
         print("----------------------------------------")
-        selected_text = select_text()
+        selected_text = text_selection()
         analyze_text(selected_text)
 
 if __name__ == "__main__":
     main()
-
